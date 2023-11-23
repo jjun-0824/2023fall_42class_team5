@@ -6,18 +6,18 @@
 <body>
     <div class="container">
     <h1>pic?sure</h1>
-    <button type="button" onclick="location.href='/exchange'">사진</button>
+    
+    <!-- 링크 생성파트 -->
+    <h3>링크생성 파트</h3>
+    <button type="button" onclick="location.href='/link'">링크 생성</button>
+    <p>{{url}}</p>
 
-
-    <!-- {% if filename %}
-        <div>
-            <img src="{{filename}}">
-        </div>
-    {% endif %}
+    <!-- 사진 업로드 파트 -->
+    <h3>사진업로드 파트</h3>
     <form method="post" action="/upload" enctype="multipart/form-data">
         <input type="file" name="file">
         <input type="submit" value="submit">
-    </form> -->
+    </form>
     </div>
 </body>
 </head>

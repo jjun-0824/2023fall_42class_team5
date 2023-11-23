@@ -6,9 +6,11 @@
 <body>
     <div class="container">
     <h1>pic?sure</h1>
-    <h1>get_photo page</h1>
-
-
+    {% if image %}
+    <div>
+        <img src="{{image}}">
+    </div>
+    {% endif %}
     </div>
 </body>
 </head>
