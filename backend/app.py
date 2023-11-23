@@ -7,18 +7,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('.html')
+    return render_template('home.html')
 
-@app.route('/upload', methods = ['POST'])
-def upload():
-    file = request.files['file']
-    filename = file.filename
-    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    img_src = url_for('static', filename = 'uploads/' + filename)
-    
-
-
-    return render_template('index.html')
+@app.route('/exchange')
+def exchange():
+    return render_template('get_photo.html')
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)
