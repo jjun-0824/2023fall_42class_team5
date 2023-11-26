@@ -38,6 +38,10 @@ def fail():
     # 기본적으로 이 index 함수가 실행됨.
     return render_template('fail.html')
 
+@app.route('/success')
+def success():
+    # 기본적으로 이 index 함수가 실행됨.
+    return render_template('success.html')
 @app.route('/link')
 def get_link():
     link="https://1234"

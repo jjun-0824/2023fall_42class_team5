@@ -3,7 +3,7 @@
 <html data-wf-page="655affc7c059a3c374b0cdec" data-wf-site="655affc7c059a3c374b0cdb3">
 <head>
   <meta charset="utf-8">
-  <title>Gw&#x27;s Ultra-Awesome Site</title>
+  <title>pic?sure!</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="../static/css/normalize.css" rel="stylesheet" type="text/css">
@@ -67,17 +67,19 @@
         </div>
       </div>
       
-      <div class="image-crop"><img src="images/iphone-white-mockup.png" sizes="(max-width: 479px) 96vw, (max-width: 767px) 91vw, (max-width: 991px) 588px, 800px" srcset="images/iphone-white-mockup-p-500x.png 500w, images/iphone-white-mockup-p-800x.png 800w, images/iphone-white-mockup.png 1909w" alt=""></div>
+      <div class="image-crop"><img src="{{ url_for('static', filename='images/iphone-white-mockup.png') }}" sizes="(max-width: 479px) 96vw, (max-width: 767px) 91vw, (max-width: 991px) 588px, 800px" srcset="{{ url_for('static', filename='images/iphone-white-mockup.png-p-500x.png') }} 500w, {{ url_for('static', filename='images/iphone-white-mockup.png-p-800x.png') }} 800w, {{ url_for('static', filename='images/iphone-white-mockup.png') }} 1909w" alt=""></div>
     </div>
   </div>
-  <div class="social-section">
+  <div class="social-section" style="padding-top: 30px; padding-bottom: 30px;">
     <div class="w-container">
-      <h2 class="heading">Introduction to Software Engineering_SWE3002_42</h2>
+      <h3 class="heading">Introduction to Software Engineering_SWE3002_42</h3>
     </div>
   </div>
   <script>
-    var getPhotoAaddr = 'http://127.0.0.1:5000/getphoto/1'
-    var getPhotoBaddr = 'http://127.0.0.1:5000/getphoto/2'
+    var server_ip = 'http://127.0.0.1'
+    var port = '5000'
+    var getPhotoAaddr = server_ip + ':' + port + '/getphoto/1'
+    var getPhotoBaddr = server_ip + ':' + port + '/getphoto/2'
     $(document).ready(function() {
     $('#fillButton').click(function() {
         // get_photo_b.html을 반환하는 API주소
