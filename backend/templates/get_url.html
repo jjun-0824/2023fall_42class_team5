@@ -76,22 +76,22 @@
     </div>
   </div>
   <script>
-    var getPhotoAaddr = 'http://127.0.0.1:5500/2023fall_42class_team5/backend/templates/get_photo_a.html'
-    var getPhotoBaddr = 'http://127.0.0.1:5500/2023fall_42class_team5/backend/templates/get_photo_b.html'
+    var getPhotoAaddr = 'http://127.0.0.1:5000/getphoto/1'
+    var getPhotoBaddr = 'http://127.0.0.1:5000/getphoto/2'
     $(document).ready(function() {
     $('#fillButton').click(function() {
         // get_photo_b.html을 반환하는 API주소
-        $.ajax({
-            url: 'http://localhost:8000/get_url',
-            type: 'GET',
-            dataType: 'text',
-            success: function(data) {
-                $('#inputField').val(data.url);
-            },
-            error: function() {
-                alert('Error fetching data from server.');
-            }
-        });
+        // $.ajax({
+        //     url: 'http://127.0.0.1:5000/getphoto/1',
+        //     type: 'GET',
+        //     dataType: 'text',
+        //     success: function(data) {
+        //         $('#inputField').val(data.url);
+        //     },
+        //     error: function() {
+        //         alert('Error fetching data from server.');
+        //     }
+        // });
         $('#inputField').val(getPhotoBaddr);
         $(this).addClass('hidden')
         $('#copyButton').removeClass('hidden')
