@@ -95,6 +95,8 @@
     var server_ip = 'http://52.87.216.217'
     var port = '5000'
     var exchange_a_url = server_ip + ':' + port + '/exchange/1'
+
+    var cnt = 0;
     $('#uploadButton').click(function(){
         //$.ajax({
         //    url: "https://jsonplaceholder.typicode.com/posts/1",
@@ -109,7 +111,12 @@
         //      $("#result").html("Ajax GET 요청 실패");
         //    }
         //});
-        window.location.href = exchange_a_url
+        if(cnt == 0){
+          alert("업로드 완료, 상대방이 아직 업로드를 완료하지 않았습니다.");
+          cnt++;
+        }
+        if(cnt == 1)
+          window.location.href = exchange_a_url
 
     })
     $('#uploadLabel1').click(function() {
