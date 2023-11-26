@@ -113,12 +113,6 @@ def saveFavorB():
     if photo_num in [1, 2, 3] and favor in ['Yes', 'No']:
         resp_dict_2['user_b'][photo_num] = favor          #해당되는 photo_num과 그에 대한 user_a의 response를 dictionary에 저장
 
-    #서버측으로 POST요청 보내는 경우
-    # url = 'http://server_domain/saveFavorA'
-    # data = {'photo_num': photo_num, 'favor': favor}
-
-    # response = requests.post(url, data=data)            #저장된 data들과 함께 서버의 엔드포인트로 POST요청을 보냄
-    # print(response.text)
     return {}
 
 @app.route('/getFavorB', methods=['GET'])               
@@ -135,4 +129,4 @@ def getFavorB():
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    app.run('0.0.0.0', port=5000, debug=True)
