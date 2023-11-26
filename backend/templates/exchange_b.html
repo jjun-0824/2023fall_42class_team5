@@ -61,9 +61,9 @@
   <script src="js/webflow.js" type="text/javascript"></script>
   <script>
     var cnt = 1;
-    var saveFavorB_addr = ''
-    var getFavorA_addr = ''
-    var fail_addr = 'http://127.0.0.1:5500/2023fall_42class_team5/backend/templates/fail.html'
+    var saveFavorB_addr = 'http://127.0.0.1:5000/saveFavorB'
+    var getFavorA_addr = 'http://127.0.0.1:5000/getFavorA'
+    var fail_addr = 'http://127.0.0.1:5000/fail'
     // Yes
     $('#yes_button').click(function(){
         // Yes 응답 저장
@@ -88,12 +88,12 @@
                             // alert 상대방이 거부
                             // redirect to fail.html
                             alert('상대방이 거부의사를 표현했습니다')
-                            window.location.href = 'http://127.0.0.1:5500/2023fall_42class_team5/backend/templates/fail.html'
+                            window.location.href = fail_addr
                         }
                         else if(res == 'true'){
                             // alert 상대방도 좋아
                             if(cnt == 1){
-                                var newImagePath = $('#'+cnt'_a').attr('src');
+                                var newImagePath = $('#'+cnt+'_a').attr('src');
                                 alert('상대방도 당신의 사진을 좋아합니다.')
                                 $('main_img').attr('src', newImagePath)
                                 $('.subtitle').text('상대방의 사진을 확인하세요(' + cnt + ')')

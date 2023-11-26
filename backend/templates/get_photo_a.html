@@ -63,15 +63,15 @@
       <p class="subtitle">사진을 업로드 해주세요</p>
       <div class="w-layout-blockcontainer container-2 w-container" >
         <label for="uploadInput" id="uploadLabel1" class='uploadlabel'>
-            <img src="images/그림1.png" id='upload1' loading="lazy" sizes="(max-width: 991px) 70px, 80px"  alt="" class="image">
+            <img src="{{ url_for('static', filename='images/그림1.png') }}" id='upload1' loading="lazy" sizes="(max-width: 991px) 70px, 80px"  alt="" class="image">
         </label>
         <input type="file" id="uploadInput1" class='uploadInput' accept="image/*">
         <label for="uploadInput" id="uploadLabel2" class='uploadlabel'>
-            <img src="images/그림1.png" id='upload2' loading="lazy" sizes="(max-width: 991px) 70px, 80px" alt="" class="image">
+            <img src="{{ url_for('static', filename='images/그림1.png') }}" id='upload2' loading="lazy" sizes="(max-width: 991px) 70px, 80px" alt="" class="image">
         </label>
         <input type="file" id="uploadInput2" class='uploadInput' accept="image/*">
         <label for="uploadInput" id="uploadLabel3" class='uploadlabel'>
-            <img src="images/그림1.png" id='upload3' loading="lazy" sizes="(max-width: 991px) 70px, 80px" alt="" class="image"></div>
+            <img src="{{ url_for('static', filename='images/그림1.png') }}" id='upload3' loading="lazy" sizes="(max-width: 991px) 70px, 80px" alt="" class="image"></div>
         </label>
         <input type="file" id="uploadInput3" class='uploadInput' accept="image/*">
         <button id="uploadButton">완료</button>
@@ -92,7 +92,7 @@
   <script src="js/webflow.js" type="text/javascript"></script>
   <script>
     var size = 130
-    var exchange_a_url = 'http://127.0.0.1:5500/2023fall_42class_team5/backend/templates/exchange_a.html'
+    var exchange_a_url = 'http://127.0.0.1:5000/exchange/1'
     $('#uploadButton').click(function(){
         //$.ajax({
         //    url: "https://jsonplaceholder.typicode.com/posts/1",
