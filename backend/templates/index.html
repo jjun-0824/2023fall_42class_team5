@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Upload and Display Image</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<!-- 이미지 클릭 시 파일 업로드를 트리거하기 위한 레이블 -->
+<label for="uploadInput" id="uploadLabel">
+    <!-- 업로드된 이미지를 표시할 img 태그 -->
+    <img id="uploadedImage" src="placeholder_image.jpg" alt="Uploaded Image" width="100" height="100">
+</label>
+
+<!-- 파일 업로드 input 태그 -->
+<input type="file" id="uploadInput" style="display: none;">
+
+<script>
+$(document).ready(function() {
+    // 이미지 클릭 시 파일 업로드 다이얼로그를 열기
+    $('#uploadLabel').off('click').on('click', function() {
+        $('#uploadInput').click();
+    });
+
+
+    // 파일 선택(input 태그)에 대한 이벤트 핸들러 등록
+    $('#uploadInput').off('change').on('change', function() {
+        var fileInput = this;
+        var file = fileInput.files[0];
+
+        if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                // 파일의 내용을 이미지에 표시
+                $('#upload3').attr('src', e.target.result);
+            };
+
+            // 파일을 읽어오기
+            reader.readAsDataURL(file);
+        }
+    });
+});
+</script>
+
+</body>
+</html>
