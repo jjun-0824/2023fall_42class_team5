@@ -91,7 +91,8 @@
                         if(res == 'false'){
                             // alert 상대방이 거부
                             // redirect to fail.html
-                            alert('상대방이 거부의사를 표현했습니다')
+                            alert('상대방이 거부의사를 표현했습니다');
+                            window.location.href=fail_addr;
                         }
                         else if(res == 'true'){
                             // alert 상대방도 좋아
@@ -122,7 +123,6 @@
           method: 'POST',
           data: {photo_num: cnt, favor: 'No'},
           dataType: 'json',
-          window.location.href = fail_addr
 
           success: function(data, status){
               console.log("data saved " + cnt + " No")

@@ -115,8 +115,10 @@
           alert("업로드 완료, 상대방이 아직 업로드를 완료하지 않았습니다.");
           cnt++;
         }
-        if(cnt == 1)
-          window.location.href = exchange_a_url
+        else if(cnt == 1){
+            window.location.href = exchange_a_url;
+        }
+          
 
     })
     $('#uploadLabel1').click(function() {
